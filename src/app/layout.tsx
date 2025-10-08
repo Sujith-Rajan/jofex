@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Link from "next/link";
-import WhatsappIcon from "@/assets/WhatsappIcon";
+import WhatsApp from "@/components/WhatsApp";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -15,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Industrial Corp - Excellence in Manufacturing Since 1969",
+  title: "Jofex Industrial Corp - Excellence in Manufacturing Since 1969",
   description:
     "Global leader in industrial materials and manufacturing solutions. Serving customers worldwide with over 50 years of expertise in chemical solutions, equipment, and advanced materials.",
   openGraph: {
@@ -46,15 +45,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
-        <Link
-          className="fixed bottom-4 right-4 flex items-center gap-2 bg-green-500 hover:bg-green-700 text-white  shadow-lg p-2 rounded-full"
-          href="https://wa.me/9746866962"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <WhatsappIcon/>
-          Chat
-        </Link>
+        <WhatsApp />
       </body>
     </html>
   );
